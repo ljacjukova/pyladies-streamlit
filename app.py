@@ -66,13 +66,13 @@ category_chart = alt.Chart(data_by_category).mark_line().encode(x='Rok:O', y='Ce
 st.altair_chart(category_chart)
 
 col_left, col_right = st.columns(2)
-#with col_left:
-#    st.metric(f'Nejnižší cena paliva ({selected_type})', f'{get_cost(data_by_category)["Cena"]} Kč', get_cost(data_by_category)['Rok'])
-#with col_right:
-#    st.metric(f'Nejvyšší cena paliva ({selected_type})', f'{get_cost(data_by_category, asc=False)["Cena"]} Kč', get_cost(data_by_category, asc=False)['Rok'])
+with col_left:
+    st.metric(f'Nejnižší cena paliva ({selected_type})', f'{get_cost(data_by_category)["Cena"]} Kč', get_cost(data_by_category)['Rok'])
+with col_right:
+    st.metric(f'Nejvyšší cena paliva ({selected_type})', f'{get_cost(data_by_category, asc=False)["Cena"]} Kč', get_cost(data_by_category, asc=False)['Rok'])
 
-#col_left, col_right = st.columns(2)
-#with col_left:
-#    st.metric(f'Nejnižší cena paliva ({selected_type})', f'{data_by_category["Cena"].min()} Kč')
-#with col_right:
-#    st.metric(f'Nejvyšší cena paliva ({selected_type})', f'{data_by_category["Cena"].max()} Kč')
+col_left, col_right = st.columns(2)
+with col_left:
+    st.metric(f'Nejnižší cena paliva ({selected_type})', f'{data_by_category["Cena"].min()} Kč')
+with col_right:
+    st.metric(f'Nejvyšší cena paliva ({selected_type})', f'{data_by_category["Cena"].max()} Kč')
